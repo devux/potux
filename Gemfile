@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 # authentication gems
 gem 'devise'
 
+# materialize gem
+gem 'materialize-sass'
+
+
 
 
 group :development, :test do
