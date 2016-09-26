@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Petitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Video url</th>
+      <th>Tag</th>
+      <th>Location</th>
+      <th>Country</th>
+      <th>State</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @petitions.each do |petition| %>
+      <tr>
+        <td><%= petition.image %></td>
+        <td><%= petition.description %></td>
+        <td><%= petition.video_url %></td>
+        <td><%= petition.tag %></td>
+        <td><%= petition.location %></td>
+        <td><%= petition.country %></td>
+        <td><%= petition.state %></td>
+        <td><%= link_to 'Show', petition %></td>
+        <td><%= link_to 'Edit', edit_petition_path(petition) %></td>
+        <td><%= link_to 'Destroy', petition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Petition', new_petition_path %>

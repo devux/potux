@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @petition.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @petition.description %>
+</p>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @petition.video_url %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @petition.tag %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @petition.location %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @petition.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @petition.state %>
+</p>
+
+<%= link_to 'Edit', edit_petition_path(@petition) %> |
+<%= link_to 'Back', petitions_path %>
