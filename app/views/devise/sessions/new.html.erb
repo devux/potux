@@ -1,26 +1,82 @@
-<h2>Log in</h2>
+<h5>Potux</h5>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card yellow-grey darken-1">
+      <br/>
+      <%= link_to 'Signup', new_registration_path(resource_name), class: "waves-effect waves-light btn right" %>
+      <br/>
+      <br/>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card yellow-grey darken-1">
+            <center>
+              <div>
+                <div>
+                  <i class="large material-icons">face</i>
+                </div>
+                <div>
+                  <button class="waves-effect waves-light btn">Login As Ananymous</button>
+                </div>
+              </div>
+            </center>
+            <br/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card yellow-grey darken-1">
+            <center>
+              <div class="row">
+                <%= form_for(resource, :html => {:class => 'col s12'}, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <%= f.email_field :email, autofocus: true, class: "validate" %>
+                    <%= f.label :email %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <%= f.password_field :password, autocomplete: "off", class: "validate" %>
+                    <%= f.label :password %>
+                  </div>
+                </div>
+                <% if devise_mapping.rememberable? -%>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+                <% end -%>
+                <div class="actions">
+                  <%= f.submit "Log in", class: "waves-effect waves-light btn" %>
+                </div>
+                <br/>
+                <%= link_to 'forgot password', new_password_path(resource_name) %>
+                <% end %>
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+  <div class="col s12 m6">
+    <div class="card yellow-grey darken-1">
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card yellow-grey darken-1">
+            <iframe src="https://en.wikipedia.org/wiki/Anonymous_(group)" style="width:580px; height:330px"></iframe>
+          </div>
+        </div>
+      </div>
+        &nbsp;<p><b>We are not an Social Media</b></p>
+        <p>1. Main aim of application is to find out illegal mistakes like bribe and make it known by people with exact witness.<br/>2. We know each and every place bribe process happening in front of us so by using this app we can publish all illegal business,bribes to all.
+        </p>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+  </div>
+</div>
 
-<%= render "devise/shared/links" %>
