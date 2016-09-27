@@ -1,5 +1,65 @@
-<%= form_for(petition) do |f| %>
-  <% if petition.errors.any? %>
+ <div class="row">
+<%= form_for(petition, :html => {:class => 'col s12'}) do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :image,class: "validate" %>
+        <input id="email" type="email" class="validate">
+        <%= f.label :image %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :description,class: "validate" %>
+        <%= f.label :description %>
+      </div>
+    </div>
+    <div>
+      <div class="input-field col s12">
+        <%= f.text_field :video_url,class: "validate" %>
+        <%= f.label :video_url %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :tag,class: "validate" %>
+        <%= f.label :tag %>
+      </div>
+    </div>
+    <div>
+      <div class="input-field col s12">
+        <%= f.text_field :location,class: "validate" %>
+        <input id="email" type="email" class="validate">
+        <%= f.label :location %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :country,class: "validate" %>
+        <%= f.label :country %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.text_field :state,class: "validate" %>
+        <%= f.label :state %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+     <br/>
+    <%= link_to 'Back', petitions_path %>
+    <br/>
+  <% end %>
+</div>
+        
+
+
+
+
+
+
+<!--   <% if petition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(petition.errors.count, "error") %> prohibited this petition from being saved:</h2>
 
@@ -9,44 +69,5 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> -->
 
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :video_url %>
-    <%= f.text_field :video_url %>
-  </div>
-
-  <div class="field">
-    <%= f.label :tag %>
-    <%= f.text_field :tag %>
-  </div>
-
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_area :location %>
-  </div>
-
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_area :country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
