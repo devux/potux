@@ -1,0 +1,2 @@
+class PetitionAdvisor < ApplicationRecord
+end
