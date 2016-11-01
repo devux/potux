@@ -1,0 +1,53 @@
+<%= form_for(@petition,:url => petitions_path, :html => {:class => 'col s12'}) do |f| %>
+<div id="modal1" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.text_field :description,class: "validate" %>
+              <label for="description">description</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.text_field :image,class: "validate" %>
+              <label for="image">image</label>
+            </div>
+            <div class="input-field col s6">
+              <%= f.text_field :video_url,class: "validate" %>
+              <label for="video_url">video_url</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="text" class="validate">
+              <label for="email">Tags</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+               <%= f.text_field :location,class: "validate" %>
+              <label for="location">location</label>
+            </div>
+            <div class="input-field col s4">
+              <%= f.text_field :country,class: "validate" %>
+              <label for="country">country</label>
+            </div>
+            <div class="input-field col s4">
+              <%= f.text_field :state,class: "validate" %>
+              <label for="state">state</label>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit class: 'modal-action modal-close waves-effect waves-green btn-flat ' %>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">back</a>
+  </div>
+  <% end %>
+
+
+
+  
